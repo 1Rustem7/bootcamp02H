@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+		<!-- Подключаем библиотеку ethers.js из CDN для поддержки Ethereum для JavaScript. -->
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+      ></script>
+
+		<!-- Подключаем JavaScript-файл -->
+		<script src="script.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <h1>ВСЕ НА ВЫБОРЫ</h1>
+
+
+      <p>Администрация: укажите топик и варианты ответов (варианты указать в квадратной скобке через запятую,в кавычках)</p>
+      
+  <label for="topic"> Тема голосования:</label>
+  <input type="topic" id="topic" />
+  <button onclick="addVote()">Set</button>
+
+  <label for="options"> Варианты ответов:</label>
+  <input type="options" id="options" />
+  <button onclick="addVote()">Set</button>
+
+      <p>Администрация: зарегистрируйте желающих проголосовать аккаунты в качестве избирателей</p>
+          <br />
+      <label for="voter"> Аккаунт избирателя:</label>
+      <input type="voter" id="voter" />
+      <button onclick="registerVoter()">Register</button>
+      
+      <br />
+      <br />
+      <br />
+
+      <p>Избиратель: Выберите тему голосования и свой ответ (порядковый номер темы и варианта ответа, цифра от 0)</p>
+      <label for="votetopic"> Тема:</label>
+      <input type="votetopic" id="votetopic" />
+      <button onclick="vote(id)">choise</button>
+
+      <label for="voteoption"> Мой выбора за:</label>
+      <input type="voteoption" id="voteoption" />
+      <button onclick="vote(option)">choise</button>
+
+      <br />
+      <br />
+      <br />
+
+      <button onclick="getVoteCount()">Увидеть итоги голосований</button>
+
+
+
+    </div>
+  </body>
+</html>
