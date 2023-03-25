@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract VotingSystem {
+    struct Session {
+        string topic;
+        string[] options;
+        mapping(string => uint256) votes;
+        bool isActive;
+    }
+    
+    Session[] public sessions;
+    
+    function createSession(string memory _topic, string[] memory _options) public {
+    Session memory newSession = Session({
+        topic: _topic,
+        options: _options,
+        isActive: true
+    });
+    sessions.push(newSession);
+    
+    // Initialize the votes mapping for each option
+    for (uint i = 0; i < _options.length; i++) {
+        newSession.votes[_options[i]] = 0;
+    }
+}
+
+
+    function vote(uint256 _sessionId, string memory _option) public {
+        require(sessions[_sessionId].isActive, "Voting session is closed.");
+        require(bytes(_option).length > 0, "Option cannot be empty.");
+        sessions[_sessionId].votes[_option]++;
+    }
+    
+    function getVotes(uint256 _sessionId, string memory _option) public view returns (uint256) {
+        require(bytes(_option).length > 0, "Option cannot be empty.");
+        return sessions[_sessionId].votes[_option];
+    }
+    
+    function getSessionCount() public view returns (uint256) {
+        return sessions.length;
+    }
+    
+    function getResult(uint256 _sessionId) public view returns (string[] memory, uint256[] memory) {
+        require(!sessions[_sessionId].isActive, "Voting session is still open.");
+        uint256 optionCount = sessions[_sessionId].options.length;
+        string[] memory options = new string[](optionCount);
+        uint256[] memory voteCounts = new uint256[](optionCount);
+        for (uint256 i = 0; i < optionCount; i++) {
+            options[i] = sessions[_sessionId].options[i];
+            voteCounts[i] = sessions[_sessionId].votes[options[i]];
+        }
+        return (options, voteCounts);
+    }
+}
