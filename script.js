@@ -177,8 +177,8 @@ async function registerVoter() {
 
 //Вызываем vote() в смарт-контракте и показываем пользователю
 async function vote() {
-    const votetopic = document.getElementById(votetopic).value;
-	const voteoption = document.getElementById(voteoption).value;
+    const votetopic = document.getElementById("votetopic").value;
+	const voteoption = document.getElementById("voteoption").value;
     const votetop = await contract.vote(votetopic,voteoption);
 }
 //async function vote(option) {
@@ -198,5 +198,10 @@ async function addVote() {
 }
 
 async function getVoteCount() {
-    const getvoutecount = await contract.getVouteCount();
+		contract.getVoteCount();
+	   		}
+
+async function resssult() {
+	   	
+	document.getElementById('result_multi').innerHTML = getVoteCount();
 }
