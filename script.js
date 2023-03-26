@@ -176,26 +176,25 @@ async function registerVoter() {
 }
 
 //Вызываем vote() в смарт-контракте и показываем пользователю
-async function vote(id) {
-    const votetopic = document.getElementById("votetopic").value;
-    const votetop = await contract.vote(votetopic);
+async function vote() {
+    const votetopic = document.getElementById(votetopic).value;
+	const voteoption = document.getElementById(voteoption).value;
+    const votetop = await contract.vote(votetopic,voteoption);
 }
-async function vote(option) {
-	const voteoption = document.getElementById("voteoption").value;
-    const myvote = await contract.vote(option);
-}
+//async function vote(option) {
+//	const voteoption = document.getElementById("voteoption").value;
+//    const myvote = await contract.vote(option);
+//}
 
 
 //Вызываем addVote() в смарт-контракте и показываем пользователю варианты выбора
 async function addVote() {
-    const topic = document.getElementById("topic").value;
-    const settopic = await contract.addVote(topic);
+   const topic = document.getElementById("topic").value;
+   const options1 = document.getElementById("options1").value;
+   const options2 = document.getElementById("options2").value;
+   const options3 = document.getElementById("options3").value;
+   const settoption = await contract.addVote(topic,["options1","options2","options3"]);
 	
-}
-
-async function addVote() {
-    const options = document.getElementById("options").value;
-    const setsetoptions = await contract.addVote(options);
 }
 
 async function getVoteCount() {

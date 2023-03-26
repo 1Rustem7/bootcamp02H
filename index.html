@@ -26,10 +26,16 @@
       
   <label for="topic"> Тема голосования:</label>
   <input type="topic" id="topic" />
-  <button onclick="addVote()">Set</button>
-
-  <label for="options"> Варианты ответов:</label>
-  <input type="options" id="options" />
+  <br />
+  <label for="options1"> Вариант ответa 1:</label>
+  <input type="options1" id="options1" />
+  <br />
+  <label for="options2"> Вариант ответа 2:</label>
+  <input type="options2" id="options2" />
+  <br />
+  <label for="options3"> Вариант ответа 3:</label>
+  <input type="options3" id="options3" />
+  <br />
   <button onclick="addVote()">Set</button>
 
       <p>Администрация: зарегистрируйте желающих проголосовать аккаунты в качестве избирателей</p>
@@ -43,13 +49,13 @@
       <br />
 
       <p>Избиратель: Выберите тему голосования и свой ответ (порядковый номер темы и варианта ответа, цифра от 0)</p>
-      <label for="votetopic"> Тема:</label>
+      <label for="votetopic"> Порядковый номер темы:</label>
       <input type="votetopic" id="votetopic" />
-      <button onclick="vote(id)">choise</button>
-
-      <label for="voteoption"> Мой выбора за:</label>
+      <br />
+      <label for="voteoption"> Порядковый номер вырианта:</label>
       <input type="voteoption" id="voteoption" />
-      <button onclick="vote(option)">choise</button>
+      <br />
+      <button onclick="vote()">choise</button>
 
       <br />
       <br />
