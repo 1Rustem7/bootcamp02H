@@ -197,11 +197,8 @@ async function addVote() {
 	
 }
 
-async function getVoteCount() {
-		contract.getVoteCount();
-	   		}
-
-async function resssult() {
-	   	
-	document.getElementById('result_multi').innerHTML = getVoteCount();
-}
+async function rename() {
+	const out = await contract.getVoteCount();
+	console.log(out);
+	document.getElementById("demo").innerHTML = out;        
+  }
