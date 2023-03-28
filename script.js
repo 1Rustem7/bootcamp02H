@@ -200,5 +200,5 @@ async function addVote() {
 async function rename() {
 	const out = await contract.getVoteCount();
 	console.log( contract.getVoteCount());
-	//document.getElementById("demo").innerHTML = out;        
+	document.getElementById("demo").innerHTML = out;        
   }
