@@ -199,9 +199,10 @@ async function addVote() {
 
 async function rename() {
 	alert(111)
-       var out[] = await contract.getVoteCount();
-	alert(typeof out);
-	alert(out.toString)
-	console.log(out);
+       //var out[] = await contract.getVoteCount();
+	//alert(typeof out);
+	//alert(out.toString)
+	console.log( contract.getVoteCount());
+	console.log( 222);
 	//document.getElementById("demo").innerHTML = out;        
   }
