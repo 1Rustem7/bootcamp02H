@@ -198,6 +198,7 @@ async function addVote() {
 }
 
 async function rename() {
+	alert(111)
 	const out = await contract.getVoteCount();
 	alert(typeof out);
 	alert(out.toString)
