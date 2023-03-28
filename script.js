@@ -1,5 +1,5 @@
 // Подключаемся к контракту
-const contractAddress = "0x028968166cFa5f9098dF51BB293C3733162893F5"; //Замените вашим контрактом
+const contractAddress = "0x245B9E686c1a2E27e13E62564447Febb2eFE9407"; //Замените вашим контрактом
 
 // Указываем ABI (Application Binary Interface) контракта
 const abi =[
