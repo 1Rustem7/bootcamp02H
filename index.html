@@ -11,64 +11,51 @@
     <script
       src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
       type="application/javascript"
-      ></script>
+    ></script>
 
 		<!-- Подключаем JavaScript-файл -->
 		<script src="script.js"></script>
   </head>
 
   <body>
-    <div>
-      <h1>ВСЕ НА ВЫБОРЫ</h1>
-
-
-      <p>Администрация: укажите топик и варианты ответов (варианты указать в квадратной скобке через запятую,в кавычках)</p>
-      
-  <label for="topic"> Тема голосования:</label>
-  <input type="topic" id="topic" />
-  <br />
-  <label for="options1"> Вариант ответa 1:</label>
-  <input type="options1" id="options1" />
-  <br />
-  <label for="options2"> Вариант ответа 2:</label>
-  <input type="options2" id="options2" />
-  <br />
-  <label for="options3"> Вариант ответа 3:</label>
-  <input type="options3" id="options3" />
-  <br />
-  <button onclick="addVote()">Set</button>
-
-      <p>Администрация: зарегистрируйте желающих проголосовать аккаунты в качестве избирателей</p>
+    <body>
+        <div>
+          <h1>WELCOME TO OUR VIP AUCTION</h1>
           <br />
-      <label for="voter"> Аккаунт избирателя:</label>
-      <input type="voter" id="voter" />
-      <button onclick="registerVoter()">Register</button>
+          <h1>ДОБРО ПОЖАЛОВАТЬ НА НАШ АУКЦИОН VIP ТОВАРОВ</h1>
+        </div>
+          <p>Правила аукциона: </p>
+          <br />
+          <p>Сегодня у Вас есть возможность купить уникальные NFT-билеты на конференцию 02H. Торги будут доступны в течение опредленного организатором периода и только после старта аукциона.</p>
+              <br />
+          <label for="note"> Минимальная ставка</label>
+          <input type="text" id="_minBid" />
+          <br />
+          <label for="note"> Длительность аукциона</label>
+          <input type="text" id="_duration" />
+          <br />
+          <label for="note"> Наименование лота</label>
+          <input type="text" id="_item" />
+          <br />
+          <label for="note"> Количество билетов</label>
+          <input type="text" id="_ticketsSupply" />
+          <br />
+          <button onclick="createAuction()">Создать и начать аукцион</button>
+          <br />
+          <br />
+        </div>
+          <label for="note"> Моя ставка</label>
+          <input type="text" id="_bid" />
+          <button onclick="bid()">Подать</button>
+          <br />
+          <br />
+          <label for="note"> Завершить аукцион под №</label>
+          <input type="text" id="_item2" />
+          <button onclick="endAuction()">Завершить и подвести итоги</button>
+          <p>my note: <span id="result"> </span></p>
+          </div>
+                 
+      </body>
       
-      <br />
-      <br />
-      <br />
-
-      <p>Избиратель: Выберите тему голосования и свой ответ (порядковый номер темы и варианта ответа, цифра от 0)</p>
-      <label for="votetopic"> Порядковый номер темы:</label>
-      <input type="votetopic" id="votetopic" />
-      <br />
-      <label for="voteoption"> Порядковый номер вырианта:</label>
-      <input type="voteoption" id="voteoption" />
-      <br />
-      <button onclick="vote()">choise</button>
-
-      <br />
-      <br />
-      <br />
-
-
- </div>
-   <button onclick="rename()" >Увидеть итоги голосований</button>
-   <p id="demo">Рeзультат: </p> 
-              
-
-  </div>
-
-    </div>
-  </body>
+	</body>
 </html>
